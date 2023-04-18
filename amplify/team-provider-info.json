@@ -16,10 +16,22 @@
         "amplifyreactgraphql342b89bf": {}
       },
       "api": {
-        "amplifyreactgraphql": {}
+        "amplifyreactgraphql": {},
+        "queues": {}
       },
       "storage": {
         "s3ef6d060b": {}
+      },
+      "function": {
+        "queues": {
+          "deploymentBucketName": "amplify-amplify454693753ee14-staging-182306-deployment",
+          "s3Key": "amplify-builds/queues-794364367a692b447a43-build.zip",
+          "secretsPathAmplifyAppId": "d607sqedmujpw",
+          "dbUsername": "buffleheadcarky",
+          "dbName": "qydb",
+          "dbHost": "qy-db.cztg6vtqhzsq.us-east-1.rds.amazonaws.com:3306"
+        },
+        "ticket": {}
       }
     }
   }

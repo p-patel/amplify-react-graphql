@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/queues/{key}": {
+      "name": "/queues/{key}",
+      "lambdaFunction": "queues",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
