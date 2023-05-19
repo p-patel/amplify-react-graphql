@@ -42,20 +42,20 @@ async function fetchNotes() {
 }
 
 async function createNote(event) {
-  // event.preventDefault();
-  const form = new FormData(event.target);
-  const image = form.get("image");
-  const data = {
-    name: form.get("name"),
-    description: form.get("description"),
-    image: image.name,
-  };
-  if (!!data.image) await Storage.put(data.name, image);
-  await API.graphql({
-    query: createNoteMutation,
-    variables: { input: data },
-  });
-  fetchNotes();
+  event.preventDefault();
+  // const form = new FormData(event.target);
+  // const image = form.get("image");
+  // const data = {
+  //   name: form.get("name"),
+  //   description: form.get("description"),
+  //   image: image.name,
+  // };
+  // if (!!data.image) await Storage.put(data.name, image);
+  // await API.graphql({
+  //   query: createNoteMutation,
+  //   variables: { input: data },
+  // });
+  // fetchNotes();
 
 let res = await axios.get("https://bm309qa0cc.execute-api.us-east-1.amazonaws.com/staging/queues/1")
 .catch(function (error) {
