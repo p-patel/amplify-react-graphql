@@ -58,7 +58,11 @@ async function createNote(event) {
   fetchNotes();
 
 let res = await axios.get("https://bm309qa0cc.execute-api.us-east-1.amazonaws.com/staging/queues/1")
-console.log("queue res", res)
+.catch(function (error) {
+  console.log("queues err", error.toJSON());
+});
+console.log("queues res", res)
+
 
   // event.target.reset();
 }
