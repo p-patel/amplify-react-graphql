@@ -17,6 +17,7 @@ import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
+import axios from "axios"
 
 const App = ({ signOut }) => {
   const [notes, setNotes] = useState([]);
@@ -41,7 +42,7 @@ async function fetchNotes() {
 }
 
 async function createNote(event) {
-  event.preventDefault();
+  // event.preventDefault();
   const form = new FormData(event.target);
   const image = form.get("image");
   const data = {
@@ -55,7 +56,11 @@ async function createNote(event) {
     variables: { input: data },
   });
   fetchNotes();
-  event.target.reset();
+
+let res = await axios.get("https://bm309qa0cc.execute-api.us-east-1.amazonaws.com/staging/queues/1")
+console.log("queue res", res)
+
+  // event.target.reset();
 }
 
 async function deleteNote({ id, name }) {
